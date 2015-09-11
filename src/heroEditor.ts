@@ -23,9 +23,7 @@ import {Hero} from './hero';
 export class HeroEditor {
   canceled = new EventEmitter();
   saved: = new EventEmitter();
-  constructor(restoreService: RestoreService<Hero>) {
-    this.restoreService = restoreService;
-  }
+  constructor(private restoreService: RestoreService<Hero>) {}
   set hero (hero: Hero) {
     this.restoreService.setItem(hero);
   },
