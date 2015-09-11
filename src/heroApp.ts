@@ -2,7 +2,7 @@ import {Component, View, bootstrap, CORE_DIRECTIVES} from 'angular2/angular2';
 import {HeroesService} from './heroesService';
 import {RestoreService} from './restoreService';
 import {HeroCard} from './heroCard';
-
+import {Hero} from './hero';
 
 @Component({
   selector: 'hero-app'
@@ -19,7 +19,7 @@ import {HeroCard} from './heroCard';
   directives: [CORE_DIRECTIVES, HeroCard]
 })
 export class HeroApp {
-  heroes: Array<any>;
+  heroes: Array<Hero>;
   constructor(heroesService: HeroesService) {
     this.heroes = heroesService.getHeroes();
   }

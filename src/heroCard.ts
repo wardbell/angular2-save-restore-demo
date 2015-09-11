@@ -1,5 +1,6 @@
 import {Component, View, bootstrap, CORE_DIRECTIVES} from 'angular2/angular2';
 import {HeroEditor} from './heroEditor';
+import {Hero} from './hero';
 
 @Component({
   selector: 'hero-card',
@@ -13,7 +14,7 @@ import {HeroEditor} from './heroEditor';
       <button [hidden]="editMode" (click)="editMode = !editMode">edit</button>
     </div>
     <hero-editor
-      (saved)="saved($event)"
+      (saved)="saved()"
       (canceled)="canceled($event)"
       [hidden]="!editMode"
       [hero]="hero">
@@ -22,13 +23,13 @@ import {HeroEditor} from './heroEditor';
   directives: [CORE_DIRECTIVES, HeroEditor]
 })
 export class HeroCard {
-  hero: any;
+  hero: Hero;
   editMode: boolean
 
-  saved (hero) {
+  saved () {
     this.editMode = false;
   },
-  canceled (previousHero) {
+  canceled (previousHero: Hero) {
     this.hero = previousHero;
     this.editMode = false;
   }

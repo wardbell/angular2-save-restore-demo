@@ -1,5 +1,6 @@
 import {Component, View, FORM_DIRECTIVES, EventEmitter, bootstrap, CORE_DIRECTIVES} from 'angular2/angular2';
 import {RestoreService} from './restoreService';
+import {Hero} from './hero';
 
 @Component({
   selector: 'hero-editor',
@@ -22,10 +23,10 @@ import {RestoreService} from './restoreService';
 export class HeroEditor {
   canceled = new EventEmitter();
   saved: = new EventEmitter();
-  constructor(restoreService: RestoreService<any>) {
+  constructor(restoreService: RestoreService<Hero>) {
     this.restoreService = restoreService;
   }
-  set hero (hero) {
+  set hero (hero: Hero) {
     this.restoreService.setItem(hero);
   },
   get hero () {
