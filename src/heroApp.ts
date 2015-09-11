@@ -25,4 +25,4 @@ export class HeroApp {
   }
 }
 
-bootstrap(HeroApp, [HeroesService, RestoreService]);
+bootstrap(HeroApp, [HeroesService]);
