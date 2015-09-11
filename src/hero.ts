@@ -1,4 +1,4 @@
 export class Hero {
-  name: string,
-  superpowers: Array<string>
+  name: string;
+  superpowers: Array<string>;
 }

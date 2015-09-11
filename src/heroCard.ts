@@ -28,7 +28,8 @@ export class HeroCard {
 
   saved () {
     this.editMode = false;
-  },
+  }
+
   canceled (previousHero: Hero) {
     this.hero = previousHero;
     this.editMode = false;

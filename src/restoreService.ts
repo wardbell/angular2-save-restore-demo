@@ -16,7 +16,7 @@ export class RestoreService<T> {
     return this.getItem();
   }
 
-  clone (item T) :T {
+  clone (item: T) :T {
     // super poor clone implementation
     return JSON.parse(JSON.stringify(item));
   }
