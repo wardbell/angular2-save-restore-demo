@@ -1,0 +1,7 @@
+h2 { color: #444; font-weight: lighter; margin-bottom: 0}
+body { margin: 2em; }
+body, input[text], button { color: #888; font-family: Cambria, Georgia; }
+button {padding: 0.2em; font-size: 14px}
+div {padding: 0.2em;}
+
+.editor {margin-bottom: 0.2em; padding: 0.4em; border: 1px solid lightblue;}

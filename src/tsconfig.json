@@ -6,6 +6,7 @@
         "declaration": false,
         "noImplicitAny": false,
         "removeComments": true,
+        "experimentalDecorators": true,
         "noLib": false,
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true
@@ -16,10 +17,10 @@
     ],
     "files": [
         "./hero.ts",
-        "./heroApp.ts",
-        "./heroCard.ts",
-        "./heroEditor.ts",
-        "./heroesService.ts",
-        "./restoreService.ts"
+        "./hero-app.ts",
+        "./hero-card.ts",
+        "./hero-editor.ts",
+        "./heroes-service.ts",
+        "./sandbox-editor-service.ts"
     ]
 }

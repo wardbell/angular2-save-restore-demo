@@ -2,8 +2,8 @@ import {Hero} from './hero';
 
 export class HeroesService {
   heroes: Array<Hero> = [
-    { name: "Superman", superpowers: [] },
-    { name: "Batman", superpowers: []
+    { id: 1, name: "RubberMan", superpowers: [] },
+    { id: 2, name: "Tornado", superpowers: []
   }];
 
   getHeroes () {

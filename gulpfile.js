@@ -2,6 +2,7 @@ var gulp = require('gulp');
 
 var PATHS = {
     src: {
+        css: 'src/**/*.css',
         js: 'src/**/*.ts',
         html: 'src/**/*.html'
     },
@@ -32,6 +33,10 @@ gulp.task('js', function () {
     return tsResult.js.pipe(gulp.dest('dist'));
 });
 
+gulp.task('css', function () {
+    return gulp.src(PATHS.src.css).pipe(gulp.dest('dist'));
+});
+
 gulp.task('html', function () {
     return gulp.src(PATHS.src.html).pipe(gulp.dest('dist'));
 });
@@ -40,7 +45,7 @@ gulp.task('libs', function () {
     return gulp.src(PATHS.lib).pipe(gulp.dest('dist/lib'));
 });
 
-gulp.task('play', ['libs', 'html', 'js'], function () {
+gulp.task('play', ['libs', 'css', 'html', 'js'], function () {
     var http = require('http');
     var connect = require('connect');
     var serveStatic = require('serve-static');
@@ -48,6 +53,7 @@ gulp.task('play', ['libs', 'html', 'js'], function () {
 
     var port = 9000, app;
 
+    gulp.watch(PATHS.src.css, ['css']);
     gulp.watch(PATHS.src.html, ['html']);
     gulp.watch(PATHS.src.js, ['js']);
 
