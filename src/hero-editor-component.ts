@@ -25,15 +25,8 @@ import {Hero} from './hero';
 export class HeroEditor {
   canceled = new EventEmitter();
   saved = new EventEmitter();
-  editorService: SandboxEditorService<Hero>;
 
-  // CAN'T GET THE INJECTION TO WORK
-  // constructor(editorService: SandboxEditorService<Hero>) {}
-
-  // BAD: new-ing the service ... but it works
-  constructor() {
-    this.editorService = new SandboxEditorService<Hero>();
-  }
+  constructor(private editorService: SandboxEditorService<Hero>) {}
 
   set hero(hero: Hero) {
     this.editorService.setItem(hero);

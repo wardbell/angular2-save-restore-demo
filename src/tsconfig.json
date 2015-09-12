@@ -18,9 +18,8 @@
     ],
     "files": [
         "./hero.ts",
-        "./hero-app.ts",
-        "./hero-card.ts",
-        "./hero-editor.ts",
+        "./hero-app-component.ts",
+        "./hero-editor-component.ts",
         "./heroes-service.ts",
         "./sandbox-editor-service.ts"
     ]

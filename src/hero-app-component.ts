@@ -1,6 +1,6 @@
 import {bootstrap, Component, View, CORE_DIRECTIVES} from 'angular2/angular2';
 import {HeroesService} from './heroes-service';
-import {HeroEditor} from './hero-editor';
+import {HeroEditor} from './hero-editor-component';
 import {Hero} from './hero';
 
 @Component({
