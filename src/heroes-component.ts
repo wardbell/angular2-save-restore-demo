@@ -1,10 +1,10 @@
-import {bootstrap, Component, View, CORE_DIRECTIVES} from 'angular2/angular2';
+import {Component, CORE_DIRECTIVES, View} from 'angular2/angular2';
 import {HeroesService} from './heroes-service';
 import {HeroEditor} from './hero-editor-component';
 import {Hero} from './hero';
 
 @Component({
-  selector: 'hero-app'
+  selector: 'my-heroes'
 })
 @View({
   template: `
@@ -29,7 +29,7 @@ import {Hero} from './hero';
     </div>`,
   directives: [CORE_DIRECTIVES, HeroEditor]
 })
-export class HeroApp {
+export class HeroesComponent {
   heroItems: HeroItem[];
 
   constructor(heroesService: HeroesService) {
@@ -55,4 +55,3 @@ class HeroItem {
   editActive = false;
 }
 
-bootstrap(HeroApp, [HeroesService]);

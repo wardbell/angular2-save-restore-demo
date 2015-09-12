@@ -1,4 +1,4 @@
-import {Component, View, FORM_DIRECTIVES, EventEmitter, CORE_DIRECTIVES} from 'angular2/angular2';
+import {Component, CORE_DIRECTIVES, EventEmitter, FORM_DIRECTIVES, View} from 'angular2/angular2';
 import {SandboxEditorService} from './sandbox-editor-service';
 import {Hero} from './hero';
 
@@ -43,6 +43,6 @@ export class HeroEditor {
 
   onCanceled() {
     this.editorService.restoreItem();
-    this.canceled.next();
+    this.canceled.next(null);
   }
 }
