@@ -1,4 +1,4 @@
-import {Component, View, FORM_DIRECTIVES, EventEmitter, bootstrap, CORE_DIRECTIVES} from 'angular2/angular2';
+import {Component, View, FORM_DIRECTIVES, EventEmitter, CORE_DIRECTIVES} from 'angular2/angular2';
 import {SandboxEditorService} from './sandbox-editor-service';
 import {Hero} from './hero';
 
@@ -25,28 +25,32 @@ import {Hero} from './hero';
 export class HeroEditor {
   canceled = new EventEmitter();
   saved = new EventEmitter();
-  sandboxService: SandboxEditorService;
+  editorService: SandboxEditorService<Hero>;
 
+
+  // CAN'T GET THE INJECTION TO WORK
+  // constructor(editorService: SandboxEditorService<Hero>) {}
+
+  // BAD: new-ing the service ... but it works
   constructor() {
-    this.sandboxService = new SandboxEditorService();
+    this.editorService = new SandboxEditorService<Hero>();
   }
-  //constructor(sandboxService: SandboxEditorService) {}
 
   set hero (hero: Hero) {
-    this.sandboxService.setItem(hero);
+    this.editorService.setItem(hero);
   }
 
   get hero () {
-    return this.sandboxService.getItem();
+    return this.editorService.getItem();
   }
 
   onSaved() {
-    this.sandboxService.saveItem();
+    this.editorService.saveItem();
     this.saved.next(this.hero);
   }
 
   onCanceled () {
-    this.sandboxService.restoreItem();
+    this.editorService.restoreItem();
     this.canceled.next();
   }
 }

@@ -1,29 +1,27 @@
-import {Hero} from './hero';
+export class SandboxEditorService<T> {
+  private _originalItem: T;
+  currentItem: T;
 
-export class SandboxEditorService {
-  private _originalItem: Hero;
-  currentItem: Hero;
-
-  setItem (item: Hero) {
+  setItem(item: T) {
     this._originalItem = item;
     this.restoreItem();
   }
 
-  getItem () :Hero {
+  getItem(): T {
     return this.currentItem;
   }
 
-  restoreItem () {
+  restoreItem() {
     this.currentItem = this.clone(this._originalItem);
   }
 
-  saveItem () {
+  saveItem() {
     this._originalItem = this.currentItem;
     this.restoreItem();
   }
 
 
-  clone (item: Hero) :Hero {
+  clone(item: T): T {
     // super poor clone implementation
     return JSON.parse(JSON.stringify(item));
   }

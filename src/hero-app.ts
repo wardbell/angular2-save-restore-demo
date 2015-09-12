@@ -1,6 +1,5 @@
-import {Component, View, bootstrap, CORE_DIRECTIVES} from 'angular2/angular2';
+import {bootstrap, Component, View, CORE_DIRECTIVES} from 'angular2/angular2';
 import {HeroesService} from './heroes-service';
-import {SandboxEditorService} from './sandbox-editor-service';
 import {HeroEditor} from './hero-editor';
 import {Hero} from './hero';
 
