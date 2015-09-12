@@ -12,8 +12,8 @@ import {Hero} from './hero';
   template: `
     <div class="editor">
       <div>
-      <span>Name: </span>
-      <input [(ng-model)]="hero.name"/>
+        <span>Name: </span>
+        <input [(ng-model)]="hero.name"/>
       </div>
       <div>
         <button (click)="onSaved()">save</button>
@@ -27,7 +27,6 @@ export class HeroEditor {
   saved = new EventEmitter();
   editorService: SandboxEditorService<Hero>;
 
-
   // CAN'T GET THE INJECTION TO WORK
   // constructor(editorService: SandboxEditorService<Hero>) {}
 
@@ -36,11 +35,11 @@ export class HeroEditor {
     this.editorService = new SandboxEditorService<Hero>();
   }
 
-  set hero (hero: Hero) {
+  set hero(hero: Hero) {
     this.editorService.setItem(hero);
   }
 
-  get hero () {
+  get hero() {
     return this.editorService.getItem();
   }
 
@@ -49,7 +48,7 @@ export class HeroEditor {
     this.saved.next(this.hero);
   }
 
-  onCanceled () {
+  onCanceled() {
     this.editorService.restoreItem();
     this.canceled.next();
   }

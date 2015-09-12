@@ -1,6 +1,6 @@
-# ng2-play.ts
+# ng2-save-restore
 
-A minimal Angular2 playground using TypeScript and SystemJS
+Exploration of Ng2 DI and sandbox editors using TypeScript and SystemJS
 
 ## Install
 
@@ -13,4 +13,4 @@ Clone this repo and execute in your favourite shell:
 
 After completing installation type in your favourite shell:
 
-* `gulp play` to start a "Hello World" app in a new browser window. App files are observed and will be re-transpiled on each change.
+* `gulp play` to start the app in a new browser window. App files are observed and will be re-transpiled on each change.

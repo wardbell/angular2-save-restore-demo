@@ -9,12 +9,14 @@ import {Hero} from './hero';
 @View({
   template: `
     <div >
+
       <h2>Heros:</h2>
       <div *ng-for='#item of heroItems'>
         <span>Name:</span>
         <span>{{item.hero.name}}</span>
         <button [hidden]="item.editActive" (click)="item.editActive = !item.editActive">edit</button>
       </div>
+
       <h2>Hero Editors:</h2>
       <div *ng-for='#editItem of heroItems'>
         <div *ng-if='editItem.editActive'>
@@ -25,6 +27,7 @@ import {Hero} from './hero';
           </hero-editor>
         </div>
       </div>
+      
     </div>`,
   directives: [CORE_DIRECTIVES, HeroEditor]
 })
