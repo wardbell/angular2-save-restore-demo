@@ -18,16 +18,14 @@ import {Hero} from './hero';
       </div>
 
       <h2>Hero Editors:</h2>
-      <div *ng-for='#editItem of heroItems'>
-        <div *ng-if='editItem.editActive'>
-          <hero-editor
-            [hero]='editItem.hero'
-            (canceled)="onCanceled(editItem)"
-            (saved)="onSaved(editItem, $event)">
-          </hero-editor>
-        </div>
+      <div *ng-for='#editItem of heroesToEdit'>
+        <hero-editor
+          [hero]='editItem.hero'
+          (canceled)="onCanceled(editItem)"
+          (saved)="onSaved(editItem, $event)">
+        </hero-editor>
       </div>
-      
+
     </div>`,
   directives: [CORE_DIRECTIVES, HeroEditor]
 })
@@ -36,6 +34,10 @@ export class HeroApp {
 
   constructor(heroesService: HeroesService) {
     this.heroItems = heroesService.getHeroes().map(hero => new HeroItem(hero));
+  }
+
+  get heroesToEdit(){
+    return this.heroItems.filter(h => h.editActive);
   }
 
   onCanceled(editItem:HeroItem){
